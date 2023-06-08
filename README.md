@@ -1,1 +1,5 @@
-# Santhosh_8917004
+Your Name: Santhosh
+
+Project Title: Lab 3
+
+Student Id: 8917004

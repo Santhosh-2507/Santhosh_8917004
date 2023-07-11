@@ -55,6 +55,7 @@ product_review = driver.find_element("xpath","(//span[@class='content_3Dbgg'][no
 product_review.click()
 time.sleep(5)
 
+#Selecting 5 star review
 give_rating = driver.find_element("xpath","(//div[@class='ratableStar_VRKAs largeStars_2dUtu'])[5]")
 give_rating.click()
 time.sleep(4)

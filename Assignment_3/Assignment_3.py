@@ -22,34 +22,41 @@ time.sleep(5)
 
 assert "men-watches" in driver.title
 
-#sorting the products using highest rated
-sort_select = Select(driver.find_element("id","Sort"))
-sort_select.select_by_visible_text("Highest Rated")
-time.sleep(5)
-
 #Filtering the option with the product availability to get it shipped
 filter_checkbox = driver.find_element("id","facetFilter-Get it Shipped")
 filter_checkbox.click()
+time.sleep(4)
+
+#sorting the products using highest rated
+sort_select = Select(driver.find_element("id","Sort"))
+sort_select.select_by_visible_text("Highest Rated")
 time.sleep(3)
 
 #Selecting the product from the list
 product_list = driver.find_element("xpath","//*[@class='productItemName_3IZ3c']")
 product_list.click()
-time.sleep(8)
+time.sleep(5)
 
 #Clicking through the rating option
 product_rating = driver.find_element("xpath","(//button[@id='rating-link'])[1]")
 product_rating.click()
-time.sleep(5)
+time.sleep(4)
 
 #Toggling on the verfied purchase option button
 rating_checkbox = driver.find_element("xpath","//*[@class='x-toggle-switch toggleSwitch_2ZtVX']")
 rating_checkbox.click()
 time.sleep(3)
 
+driver.execute_script("window.scrollTo(2100,2400);")
+time.sleep(3)
+
 #Attempting to write the own review
 product_review = driver.find_element("xpath","(//span[@class='content_3Dbgg'][normalize-space()='Write Your Review'])[2]")
 product_review.click()
+time.sleep(5)
+
+give_rating = driver.find_element("xpath","(//div[@class='ratableStar_VRKAs largeStars_2dUtu'])[5]")
+give_rating.click()
 time.sleep(4)
 
 driver.close()
